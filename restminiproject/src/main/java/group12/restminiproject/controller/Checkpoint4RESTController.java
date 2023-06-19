@@ -26,7 +26,7 @@ public class Checkpoint4RESTController {
 	@Autowired
 	private Checkpoint4Repository checkpoint4Repository;
 	
-	// retrieve chcekpoint detail based on checkpoint 4 ID
+	// retrieve checkpoint detail based on checkpoint 4 ID
 	@GetMapping("{checkpoint4Id}")
 	public Checkpoint4 getCheckpoint4(@PathVariable long checkpoint4Id)
 	{

@@ -19,9 +19,10 @@
     <h2 class="text-center">[[${pageTitle}]]</h2>
 
     <div class="my-3">
-      <form th:action="@{/checkpoint4/save}" method="post" enctype="multipart/form-data" th:object="${checkpoint4}"
+      <form th:action="@{/checkpoint2/save}" method="post" enctype="multipart/form-data" th:object="${checkpoint2}"
         style="max-width: 550px; margin: 0 auto">
-        <input type="hidden" th:field="*{checkpoint4Id}" />
+
+        <input type="hidden" th:field="*{checkpoint2Id}" />
 
         <div class="p-3">
           <div class="form-group row">
@@ -33,10 +34,10 @@
           </div>
 
           <div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="flight">Flight ID</label>
+            <label class="col-sm-3 col-form-label" for="conveyorLane">Conveyor Lane ID</label>
             <div class="col-sm-9">
-              <input type="text" th:field="*{flight}" minlength="1" maxlength="256" class="form-control"
-                id="flight" />
+              <input type="text" th:field="*{conveyorLane}" minlength="1" maxlength="256" class="form-control"
+                id="conveyorLane" />
             </div>
           </div>
           
@@ -81,7 +82,7 @@
   <script type="text/javascript">
     $(document).ready(function () {
       $("#btnCancel").on("click", function () {
-        window.location = "[[@{/checkpoint4/list}]]";
+        window.location = "[[@{/checkpoint2/list}]]";
       });
     });
   </script>

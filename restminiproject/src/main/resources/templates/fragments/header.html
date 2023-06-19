@@ -8,38 +8,82 @@
     </button>
     <div class="collapse navbar-collapse" id="topNavbar">
       <ul class="navbar-nav">
-      
-      	<!-- A menu link to lists airport -->
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/airport/list}">airport </a>
-        </li>
-        
-              <!-- A menu link to lists flight types -->
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/flight/list}">Flight </a>
-        </li>
 
-        	<!-- A menu link to lists checkpoint 3-->
+		<!-- Check-in button with submenus -->
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="checkInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Check-in 1
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="checkInDropdown">
+		    <a class="dropdown-item dropdown-toggle" href="#" id="cp1Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      Checkpoint 1 (CP1)
+		    </a>
+		    <div class="dropdown-menu" aria-labelledby="cp1Dropdown">
+		      <a class="dropdown-item" th:href="@{/passenger/0}">Add new Passenger</a>
+		      <a class="dropdown-item" th:href="@{/checkpoint1/0}">Add new Checkpoint 1</a>
+		      <a class="dropdown-item" th:href="@{/luggage/0}">Add new Luggage</a>
+		      <a class="dropdown-item" th:href="@{/flight/0}">Add new Flight</a>
+		      <a class="dropdown-item" th:href="@{/flight/list}">List of Flight</a>
+		      <a class="dropdown-item" th:href="@{/checkpoint1/list}">List of Checkpoint 1</a>
+		      <a class="dropdown-item" th:href="@{/passenger/list}">List of Passenger</a>
+		      <a class="dropdown-item" th:href="@{/luggage/list}">List of Luggage</a>
+		      <a class="dropdown-item" th:href="@{/airport/list}">List of Airport</a>
+		    </div>
+		    
+		     <!-- This is for Checkpoint 2 menus -->
+		    <!-- Check-in button with submenus -->
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="checkInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Check-in 2
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="checkInDropdown">
+		  <a class="dropdown-item dropdown-toggle" href="#" id="cp1Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      Checkpoint 2 
+		    </a>
+		       <div class="dropdown-menu" aria-labelledby="cp2Dropdown">
+		      <a class="dropdown-item" th:href="@{/checkpoint2/0}">Add new Checkpoint 2</a>
+		       <a class="dropdown-item" th:href="@{/checkpoint2/list}">List of Checkpoint 2</a>
+		    </div>
+		    
+		    
+		    <!-- This is for Checkpoint 3 menus -->
+		    <!-- Check-in button with submenus -->
+		<li class="nav-item dropdown">
+		  <a class="nav-link dropdown-toggle" href="#" id="checkInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Check-in 3
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="checkInDropdown">
+		  <a class="dropdown-item dropdown-toggle" href="#" id="cp1Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      Checkpoint 3 
+		    </a>
+		       <div class="dropdown-menu" aria-labelledby="cp3Dropdown">
+		      <a class="dropdown-item" th:href="@{/checkpoint3/0}">Add new Checkpoint 3</a>
+		       <a class="dropdown-item" th:href="@{/checkpoint3/list}">List of Checkpoint 3</a>
+		    </div>
+		    
+		    
+		    <!-- This is for Checkpoint 4 menus -->
+		     <!-- Check-in button with submenus -->
+		<li class="nav-item dropdown">
+		 <a class="nav-link dropdown-toggle" href="#" id="checkInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Check-in 4
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="checkInDropdown">
+		    <a class="dropdown-item dropdown-toggle" href="#" id="cp1Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      Checkpoint 4 (CP4)
+		    </a>
+		       <div class="dropdown-menu" aria-labelledby="cp4Dropdown">
+		      <a class="dropdown-item" th:href="@{/checkpoint4/0}">Add new Checkpoint 4</a>
+		       <a class="dropdown-item" th:href="@{/checkpoint4/list}">List of Checkpoint 4</a>
+		  </div>
+		</li>
+
+        <!-- Tracking Sheet button -->
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/checkpoint3/list}">Checkpoint 3 </a>
+          <a class="nav-link" th:href="@{/tracking-sheet}">
+            Tracking Sheet
+          </a>
         </li>
-        
-        <!-- A menu link to lists checkpoint 4-->
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/checkpoint4/list}">Checkpoint 4 </a>
-        </li>
-        
-        <!-- A menu link to add a new checkpoint 3 -->
-         <li class="nav-item">
-          <a class="nav-link" th:href="@{/checkpoint3/0}">Add New checkpoint 3 </a>
-        </li>
-        
-         <!-- A menu link to add a new checkpoint 4-->
-         <li class="nav-item">
-          <a class="nav-link" th:href="@{/checkpoint4/0}">Add New checkpoint 4 </a>
-        </li>
-        
-        
       </ul>
     </div>
   </nav>
