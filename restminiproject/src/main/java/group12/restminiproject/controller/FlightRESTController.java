@@ -18,6 +18,7 @@ import group12.restminiproject.model.Flight;
 import group12.restminiproject.repository.FlightRepository;
 
 
+
 /*
  * This REST Controller request REST web service in PROVIDER site
  * 
@@ -28,12 +29,12 @@ import group12.restminiproject.repository.FlightRepository;
 @RestController
 @RequestMapping("/api/flights")
 
-public class FlightRestController {
+public class FlightRESTController {
 	
 	@Autowired
 	private FlightRepository flightRepository;
 	
-	// delete order type record based on Id
+	// delete flight based on Id
 	@DeleteMapping("{flightId}")
 	public ResponseEntity<HttpStatus> deleteFlight(@PathVariable long flightId)
 	{
@@ -72,3 +73,4 @@ public class FlightRestController {
 	}
 	
 }
+

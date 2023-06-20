@@ -1,5 +1,7 @@
 package group12.restminiproject.controller;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 //import java.util.HashMap;
@@ -60,6 +62,10 @@ public class Checkpoint3RESTController
 			@PostMapping
 			public Checkpoint3 insertCheckpoint(@RequestBody Checkpoint3 checkpoint3)
 			{
+				LocalDate checkpoint3Date = LocalDate.now();
+			     LocalTime checkpoint3Time = LocalTime.now();
+			     checkpoint3.setCheckpoint3Date(checkpoint3Date);
+			     checkpoint3.setCheckpoint3Time(checkpoint3Time);
 				return checkpoint3Repository.save(checkpoint3);
 			}
 			

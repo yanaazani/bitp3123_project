@@ -19,7 +19,7 @@
   <div th:replace="fragments/header :: header"></div>
 
   <div class="container-fluid" style="max-width: 900px; margin: 0 auto;">
-    <h2 class="text-center">List of Checkpoint 3</h2>
+    <h2 class="text-center">List of Luggages</h2>
 
     <div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
       role="alert">
@@ -47,48 +47,38 @@
       </form>
     </div> -->
 
-    <div th:if="${checkpoint3s.size() > 0}">
+    <div th:if="${luggages.size() > 0}">
       <table class="table table-hover table-responsive-xl">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Id</th>
-             <th scope="col">Time</th>
-            <th scope="col">Date</th>
-            <th scope="col">Luggage ID</th>
-            <th scope="col">Truck ID</th>
-            <th scope="col">Truck Location</th>
+            <th scope="col">Luggage Id</th>
+            <th scope="col">Passenger Id</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="checkpoint3 : ${checkpoint3s}">
-            <th scope="row">[[${checkpoint3.getCheckpoint3Id()}]]</th>
-                <th scope="row">[[${checkpoint3.getCheckpoint3Time()}]]</th>
-            <th scope="row">[[${checkpoint3.getCheckpoint3Date()}]]</th>
-            <td>[[${checkpoint3.getLuggage()?.getLuggageId()}]]</td>
-            <td>[[${checkpoint3.getTruck()?.getTruckId()}]]</td>
-             <td>[[${checkpoint3.getTruck()?.getTruckLocation()}]]</td>
+          <tr th:each="luggage : ${luggages}">
+            <th scope="row" th:text="${luggage.luggageId}"></th>
+            <td th:text="${luggage.getPassenger()?.getPassengerId()}"></td>
             <td>
             
-              <!-- A link to edit checkpoint 3 -->
-               <a th:href="@{'/checkpoint3/' + ${checkpoint3.getCheckpoint3Id}}" 
-              	title="Edit this checkpoint 3"
+ 			<!-- A link to edit an luggage -->
+              <a th:href="@{'/luggage/' + ${luggage.luggageId}}" 
+              	title="Edit this luggage"
                 class="fa-regular fa-pen-to-square icon-dark"></a>
-              &nbsp;
+              &nbsp;>
               
-              <!-- A link to delete an checkpoint3 type -->
-               <a th:href="@{'/checkpoint3/delete/' + ${checkpoint3.checkpoint3Id}}" 
-              th:orderTypeCode="${checkpoint3.checkpoint3Id}" id="btnDelete"
-                title="Delete this checkpoint" 
+              <!-- A link to delete a luggage -->
+              <a th:href="@{/luggage/delete/{luggageId}(luggageId=${luggage.luggageId})}"
+                title="Delete this luggage"
                 class="fa-regular fa-trash-can icon-dark btn-delete"></a>
-
-            </td> 
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="" th:unless="${checkpoint3s.size() > 0}">
+    <div class="" th:unless="${luggages.size() > 0}">
       <span>No record found!</span>
     </div>
   </div>
@@ -121,18 +111,18 @@
     $(document).ready(function () {
       $(".btn-delete").on("click", function (e) {
         e.preventDefault();
-        link = $(this);
-
-        checkpoint3Id = link.attr("Id");
+        var link = $(this);
+        
+        var luggageId = link.closest("tr").find("td:first-child").text();
         $("#yesBtn").attr("href", link.attr("href"));
-        $("#confirmText").html("Do you want to delete the  \<strong\>" + checkpoint3Id + "\<\/strong\>?");
+        $("#confirmText").html("Do you want to delete luggage <strong>" + luggageId + "</strong>?");
         $("#confirmModal").modal();
       });
 
-      $("#btnClear").on("click", function (e) {
+    $("#btnClear").on("click", function (e) {
         e.preventDefault();
         $("#keyword").text("");
-        window.location = "[[@{/checkpoint3/list}]]";
+        window.location = "[[@{/luggage/list}]]";
       });
     });
   </script>

@@ -1,5 +1,8 @@
 package group12.restminiproject.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +21,13 @@ public class Checkpoint3 {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Checkpoint3Id")
 	private int checkpoint3Id;
+	
+
+	@Column(name = "Checkpoint3Time")
+	private LocalTime checkpoint3Time;
+	
+	@Column(name = "Checkpoint3Date")
+	private LocalDate checkpoint3Date;
 	
 	@ManyToOne
 	@JoinColumn(name = "LuggageId")
@@ -53,9 +63,19 @@ public class Checkpoint3 {
 		this.truck = truck;
 	}
 
+	public LocalTime getCheckpoint3Time() {
+		return checkpoint3Time;
+	}
 
+	public void setCheckpoint3Time(LocalTime checkpoint3Time) {
+		this.checkpoint3Time = checkpoint3Time;
+	}
 
-	
+	public LocalDate getCheckpoint3Date() {
+		return checkpoint3Date;
+	}
 
-	
+	public void setCheckpoint3Date(LocalDate checkpoint3Date) {
+		this.checkpoint3Date = checkpoint3Date;
+	}
 }

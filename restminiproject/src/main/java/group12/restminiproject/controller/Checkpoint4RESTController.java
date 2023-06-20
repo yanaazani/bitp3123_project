@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import group12.restminiproject.model.Checkpoint4;
 import group12.restminiproject.repository.Checkpoint4Repository;
 
+/**
+ * 
+ * @author Shaufy Yana Ezani
+ *
+ */
 @RestController
 @RequestMapping("/api/checkpoint4")
 public class Checkpoint4RESTController {

@@ -5,49 +5,38 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "luggage")
-
 public class Luggage {
-	
-	//Primary Key
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "LuggageId")
-	private int luggageId;
 
-	@Column(name = "LuggageWeight")
-	private double luggageWeight;
-	
-	@Column(name = "LuggageStatus")
-	private String luggageStatus;
+  //Primary Key
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "LuggageId")
+    private int luggageId;
+    
 
-	public int getLuggageId() {
-		return luggageId;
-	}
+    @ManyToOne
+    @JoinColumn(name = "PassengerId")
+    private Passenger passenger;
 
-	public void setLuggageId(int luggageId) {
-		this.luggageId = luggageId;
-	}
+  public int getLuggageId() {
+    return luggageId;
+  }
 
-	public double getLuggageWeight() {
-		return luggageWeight;
-	}
+  public void setLuggageId(int luggageId) {
+    this.luggageId = luggageId;
+  }
 
-	public void setLuggageWeight(double luggageWeight) {
-		this.luggageWeight = luggageWeight;
-	}
+  public Passenger getPassenger() {
+    return passenger;
+  }
 
-	public String getLuggageStatus() {
-		return luggageStatus;
-	}
-
-	public void setLuggageStatus(String luggageStatus) {
-		this.luggageStatus = luggageStatus;
-	}
-	
-
-
+  public void setPassenger(Passenger passenger) {
+    this.passenger = passenger;
+  }
 }

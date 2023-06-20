@@ -39,6 +39,32 @@
                 id="truck}" />
             </div>
           </div>
+          
+          			  <div class="form-group row">
+			    <label class="col-sm-3 col-form-label" for="currentDate">Date</label>
+			    <div class="col-sm-9">
+			      <input type="text" id="currentDate" class="form-control" disabled />
+			    </div>
+			  </div>
+			
+			  <div class="form-group row">
+			    <label class="col-sm-3 col-form-label" for="currentTime">Time</label>
+			    <div class="col-sm-9">
+			      <input type="text" id="currentTime" class="form-control" disabled />
+			    </div>
+			  </div>
+			</div>
+			
+			<script>
+			  // Get the current date and time
+			  var currentDate = new Date().toLocaleDateString();
+			  var currentTime = new Date().toLocaleTimeString();
+			
+			  // Set the values in the HTML input fields
+			  document.getElementById("currentDate").value = currentDate;
+			  document.getElementById("currentTime").value = currentTime;
+			</script>
+			          
 
           <div class="text-center">
             <input type="submit" value="Save" class="btn btn-primary btn-sm mr-2" />

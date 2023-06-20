@@ -16,6 +16,11 @@ import org.springframework.web.client.RestTemplate;
 
 import group12.restminiproject.model.Checkpoint2;
 
+/**
+ * 
+ * @author Shaufy Yana Ezani
+ *
+ */
 @Controller
 public class Checkpoint2MenuController {
 	

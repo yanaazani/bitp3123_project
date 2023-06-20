@@ -17,54 +17,46 @@ import org.springframework.web.bind.annotation.RestController;
 import group12.restminiproject.model.Passenger;
 import group12.restminiproject.repository.PassengerRepository;
 
+
 @RestController
 @RequestMapping("/api/passengers")
 public class PassengerRESTController {
+	
+	@Autowired
+	private PassengerRepository passengerRepository;
+	
+	@GetMapping
+	public List<Passenger> getPassenger()
+	{
+		return passengerRepository.findAll();
+	}
+	
+	@GetMapping ("{passengerId}")
+	public Passenger getPassenger(@PathVariable long passengerId )
+	{
+		Passenger passenger = passengerRepository.findById(passengerId).get();
+		
+		return passenger;
+	}
+	
+	@PostMapping
+	public Passenger insertPassenger (@RequestBody Passenger passenger)
+	{
+		return passengerRepository.save(passenger);
+	}
+	
+	@PutMapping
+	public Passenger updatePassenger (@RequestBody Passenger passenger)
+	{
+		return passengerRepository.save(passenger);
+	}
+	
+	// delete flight based on Id
+	@DeleteMapping("{passengerId}")
+	public ResponseEntity<HttpStatus> deleteFlight(@PathVariable long passengerId)
+	{
+		passengerRepository.deleteById(passengerId);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 
-		@Autowired
-		private PassengerRepository passengerRepository;
-		
-		
-		@DeleteMapping("{passengerId}")
-		public ResponseEntity<HttpStatus> deletePassenger(@PathVariable long passengerID)
-		{
-			passengerRepository.deleteById(passengerID);
-			
-			return new ResponseEntity<>(HttpStatus.OK);
-		}
-		
-		
-		// Retrieve all passengers detail from table passenger
-		@GetMapping
-		public List<Passenger> getPassengers()
-		{
-			return passengerRepository.findAll();
-			
-		}
-		
-		//retrieve passenger detail based on passenger ID
-//		@GetMapping("{passengerId}")
-//		public Passenger getPassenger(@PathVariable long passengerID)
-//		{
-//			Passenger passenger = passengerRepository.findById(passengerID);
-//	        return passenger;	
-//		}
-		
-	
-		//insert records for passenger information
-		@PostMapping
-		public Passenger insertPassenger(@RequestBody Passenger passenger)
-		{
-			return passengerRepository.save(passenger);
-		}
-		
-		//update records for passenger information
-		@PutMapping
-		public Passenger updatePassenger(@RequestBody Passenger passenger)
-		{
-			return passengerRepository.save(passenger);
-		}
-		
-		
-	
 }
