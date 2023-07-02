@@ -47,7 +47,7 @@ public class Checkpoint2RESTController {
 		
 	}
 	
-	// insert checkpoint 
+	// insert checkpoint 2
 	@PostMapping
 	public Checkpoint2 insertCheckpoint2(@RequestBody Checkpoint2 checkpoint2)
 	{

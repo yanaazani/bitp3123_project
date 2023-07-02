@@ -35,12 +35,14 @@ public class Checkpoint1RESTController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
+	// retrieve all checkpoint 1 details
 	@GetMapping
 	public List<Checkpoint1> getCheckpoint1()
 	{
 		return checkpoint1Repository.findAll();
 	}
 	
+	// retrieve checkpoint 1 detail based on checkpoint 1 ID
 	@GetMapping ("{checkpoint1Id}")
 	public Checkpoint1 getCheckpoint1(@PathVariable long checkpoint1Id )
 	{
@@ -49,6 +51,7 @@ public class Checkpoint1RESTController {
 		return checkpoint1;
 	}
 	
+	// insert checkpoint 1
 	@PostMapping
 	public Checkpoint1 insertCheckpoint1 (@RequestBody Checkpoint1 checkpoint1)
 	{
@@ -59,6 +62,7 @@ public class Checkpoint1RESTController {
 		return checkpoint1Repository.save(checkpoint1);
 	}
 	
+	// Update checkpoint 1 
 	@PutMapping
 	public Checkpoint1 updateCheckpoint1 (@RequestBody Checkpoint1 checkpoint1)
 	{

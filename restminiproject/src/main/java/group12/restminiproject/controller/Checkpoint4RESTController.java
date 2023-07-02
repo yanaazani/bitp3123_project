@@ -20,6 +20,7 @@ import group12.restminiproject.model.Checkpoint4;
 import group12.restminiproject.repository.Checkpoint4Repository;
 
 /**
+ * This REST Controller request REST web service in PROVIDER site
  * 
  * @author Shaufy Yana Ezani
  *

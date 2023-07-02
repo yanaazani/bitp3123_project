@@ -20,7 +20,13 @@ import group12.restminiproject.model.Airport;
 @Controller 
 public class AirportMenuController {
 
-	
+
+	/**
+	 * This method is to display a list of flights 
+	 * 
+	 * @param model
+	 * @return checkpoint 
+	 */
 	@GetMapping("/airport/list")
 	public String getAirports (Model model)
 	{

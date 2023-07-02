@@ -24,7 +24,12 @@ import group12.restminiproject.model.Checkpoint3;
 import group12.restminiproject.repository.Checkpoint3Repository;
 
 
-
+/**
+ *  This REST Controller request REST web service in PROVIDER site
+ * 
+ * @author Shaufy Yana Ezani
+ *
+ */
 @RestController
 @RequestMapping("/api/checkpoint3")
 public class Checkpoint3RESTController 
@@ -42,23 +47,15 @@ public class Checkpoint3RESTController
 				return Checkpoint3;
 			}
 	
-			// retrieve all order types detail
+			// retrieve all checkpoint 3 detail
 			@GetMapping
 			public List<Checkpoint3> getCheckpoint3()
 			{
 				return checkpoint3Repository.findAll();
 				
 			}
-
-			/*// retrieve luggage detail based on luggage ID
-			@GetMapping("{luggageId}")
-			public Luggage getLuggage(@PathVariable long luggageId)
-			{
-				Luggage luggage = luggageRepository.findById(luggageId).get();
-				return luggage;
-			}*/
 			
-			// insert checkpoint 
+			// insert checkpoint 3
 			@PostMapping
 			public Checkpoint3 insertCheckpoint(@RequestBody Checkpoint3 checkpoint3)
 			{

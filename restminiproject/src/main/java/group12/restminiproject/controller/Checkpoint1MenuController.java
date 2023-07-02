@@ -19,12 +19,21 @@ import group12.restminiproject.model.Checkpoint1;
 import group12.restminiproject.model.Luggage;
 import group12.restminiproject.model.Passenger;
 
-
+/**
+ * 
+ * @author Nur Irdina Izzati
+ *
+ */
 @Controller
 public class Checkpoint1MenuController {
 	
 	private String defaultURI = "http://localhost:8080/projectapp/api/checkpoints1";
-	
+	/**
+	 * This method is to display a list of checkpoint 1 
+	 * 
+	 * @param model
+	 * @return checkpoint1
+	 */
 	@GetMapping("/checkpoint1/list")
 	public String getCheckpoints1 (Model model)
 	{
@@ -51,6 +60,12 @@ public class Checkpoint1MenuController {
 		
 	}
 	
+	/**
+	 * This method wil update or add an checkpoint
+	 * 
+	 * @param checkpoint1
+	 * @return
+	 */
 	@RequestMapping("/checkpoint1/save")
 	public String updateCeckpoint1 (@ModelAttribute Checkpoint1 checkpoint1)
 	{
@@ -80,6 +95,13 @@ public class Checkpoint1MenuController {
 		return "redirect:/checkpoint1/list";
 	}
 	
+	/**
+	 * This method will get Checkpoint list details based on Checkpoint 1 Id
+	 * 
+	 * @param Checkpoint1Id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/checkpoint1/{Checkpoint1Id}")
 	public String getCheckpoint1(@PathVariable int Checkpoint1Id, Model model) {
 
@@ -131,7 +153,7 @@ public class Checkpoint1MenuController {
 	}
 
 	/**
-	 * This method deletes an passenger
+	 * This method deletes an checkpoint 
 	 * 
 	 * @param CheckpointID
 	 * @return

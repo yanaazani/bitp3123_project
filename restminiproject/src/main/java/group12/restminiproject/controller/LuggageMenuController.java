@@ -17,12 +17,22 @@ import org.springframework.web.client.RestTemplate;
 import group12.restminiproject.model.Luggage;
 import group12.restminiproject.model.Passenger;
 
-
+/**
+ * 
+ * @author Nur Irdina Izzati
+ *
+ */
 @Controller 
 public class LuggageMenuController {
 
   String defaultURI = "http://localhost:8080/projectapp/api/luggages";
-  
+  /**
+   * 
+   * This method is to display a list of luggage
+   * 
+   * @param model
+   * @return
+   */
   @GetMapping("/luggage/list")
   public String getLuggage (Model model)
   {
@@ -49,6 +59,13 @@ public class LuggageMenuController {
     
   }
   
+  /**
+   * This method is to get luggage information based on luggage Id 
+   * 
+   * @param luggageId
+   * @param model
+   * @return
+   */
   @GetMapping("/luggage/{luggageId}")
   public String getLuggage (@PathVariable int luggageId, Model model) {
     
@@ -88,7 +105,7 @@ public class LuggageMenuController {
   }
   
   /**
-   * This method deletes an passenger
+   * This method deletes an luggage
    * 
    * @param passengerID
    * @return
@@ -105,6 +122,13 @@ public class LuggageMenuController {
     
     return "redirect:/luggage/list";
   }
+  
+  /**
+   * This method wil update or add an luggage
+   * 
+   * @param luggage
+   * @return
+   */
 @RequestMapping("/luggage/save")
   public String updateLuggage (@ModelAttribute Luggage luggage)
   {

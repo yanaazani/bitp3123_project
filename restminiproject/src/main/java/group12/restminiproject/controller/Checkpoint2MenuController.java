@@ -92,7 +92,7 @@ private String defaultURI = "http://localhost:8080/projectapp/api/checkpoint2";
 		}
 	
 	/**
-	 * This method is to get checkpoint 4 information
+	 * This method is to get checkpoint 4 information based on checkpoint 4 Id
 	 * 
 	 * @param Checkpoint2Id
 	 * @param model

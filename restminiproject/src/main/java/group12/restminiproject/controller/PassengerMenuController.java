@@ -17,12 +17,22 @@ import org.springframework.web.client.RestTemplate;
 import group12.restminiproject.model.Flight;
 import group12.restminiproject.model.Passenger;
 
-
+/**
+ * 
+ * @author Nur Irdina Izzati
+ *
+ */
 @Controller
 public class PassengerMenuController {
 	
 	private String defaultURI = "http://localhost:8080/projectapp/api/passengers";
 	
+	/**
+	 * This method is to display a list of passenger
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/passenger/list")
 	public String getPassengers (Model model)
 	{
@@ -47,7 +57,12 @@ public class PassengerMenuController {
 		
 	}
 	
-	
+	/**
+	 * This method wil update or add an passenger
+	 * 
+	 * @param passenger
+	 * @return
+	 */
 	@RequestMapping ("/passenger/save")
 	public String updatePassenger (@ModelAttribute Passenger passenger) {		
 	
@@ -79,6 +94,13 @@ public class PassengerMenuController {
 			return "redirect:/passenger/list";
 		}
 	
+	/**
+	 * This method is to get passenger information based on passenger Id
+	 * 
+	 * @param passengerId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/passenger/{passengerId}")
 	public String getPassenger (@PathVariable int passengerId, Model model) {
 		
@@ -128,7 +150,7 @@ public class PassengerMenuController {
 		// Generate new URI, similar to the mapping in PassengerRESTController
 		String uri = defaultURI + "/{passengerId}";
 		
-		// Send a DELETE request and attach the value of orderTypeId into URI
+		// Send a DELETE request and attach the value of passengerId into URI
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.delete(uri, Map.of("passengerId",(passengerId)));
 		

@@ -16,12 +16,22 @@ import org.springframework.web.client.RestTemplate;
 
 import group12.restminiproject.model.Flight;
 
-
+/**
+ * 
+ * @author Nur Irdina Izzati 
+ *
+ */
 @Controller 
 public class FlightMenuController {
 
 	private String defaultURI = "http://localhost:8080/projectapp/api/flights";
 	
+	/**
+	 * This method is to display a list of flight 
+	 * 
+	 * @param model
+	 * @return checkpoint 
+	 */
 	@GetMapping("/flight/list")
 	public String getFlight(Model model) {
 		
@@ -44,6 +54,12 @@ public class FlightMenuController {
 		return "flight";
 	}
 	
+	/**
+	 * This method wil update or add a flight
+	 * 
+	 * @param checkpoint2
+	 * @return
+	 */
 	@RequestMapping("/flight/save")
 	public String updateFlight (@ModelAttribute Flight flight)
 	{
@@ -73,6 +89,12 @@ public class FlightMenuController {
 		return "redirect:/flight/list";
 	}
 	
+	/**
+	 *  This method is to get flight information based on flight Id
+	 * @param flightId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/flight/{flightId}")
 	public String getFlight (@PathVariable Integer flightId, Model model)
 	{
@@ -101,7 +123,7 @@ public class FlightMenuController {
 	}
 	
 	/**
-	 * This method deletes an passenger
+	 * This method deletes an flight
 	 * 
 	 * @param passengerID
 	 * @return
