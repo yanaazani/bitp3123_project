@@ -19,20 +19,22 @@ import group12.restminiproject.model.Checkpoint1;
 import group12.restminiproject.model.Luggage;
 import group12.restminiproject.model.Passenger;
 
-/**
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Checkpoint 1 Menu Controller
  * 
- * @author Nur Irdina Izzati
- *
+ * @Author Nur Irdina Izzati Binti Khairuzaman
+ * 
  */
 @Controller
 public class Checkpoint1MenuController {
 	
 	private String defaultURI = "http://localhost:8080/projectapp/api/checkpoints1";
 	/**
-	 * This method is to display a list of checkpoint 1 
+	 * This is to get the checkpoint 1 
+	 * This method display checkpoint 1 details
 	 * 
-	 * @param model
-	 * @return checkpoint1
+	 * @return A list of checkpoint 1 details
 	 */
 	@GetMapping("/checkpoint1/list")
 	public String getCheckpoints1 (Model model)
@@ -61,10 +63,9 @@ public class Checkpoint1MenuController {
 	}
 	
 	/**
-	 * This method wil update or add an checkpoint
+	 * This is to request the checkpoint 1 
+	 * This method update checkpoint 1 details
 	 * 
-	 * @param checkpoint1
-	 * @return
 	 */
 	@RequestMapping("/checkpoint1/save")
 	public String updateCeckpoint1 (@ModelAttribute Checkpoint1 checkpoint1)
@@ -96,11 +97,11 @@ public class Checkpoint1MenuController {
 	}
 	
 	/**
-	 * This method will get Checkpoint list details based on Checkpoint 1 Id
+	 * This is to add new checkpoint 1
+	 * This method get checkpoint 1 details to add the new checkpoint 1
 	 * 
-	 * @param Checkpoint1Id
-	 * @param model
-	 * @return
+	 * @param Checkpoint1ID
+	 * @return A list of checkpoint 1 details by id
 	 */
 	@GetMapping("/checkpoint1/{Checkpoint1Id}")
 	public String getCheckpoint1(@PathVariable int Checkpoint1Id, Model model) {
@@ -122,21 +123,23 @@ public class Checkpoint1MenuController {
 	        title = "Edit Checkpoint 1";
 	    }
 
-	    
+	 // Get a luggage from the web service
 	    RestTemplate restTemplateLuggage = new RestTemplate();
 	    ResponseEntity<Luggage[]> responseLuggage =
 	            restTemplateLuggage.getForEntity("http://localhost:8080/projectapp/api/luggages", Luggage[].class);
 
+	 // Parse JSON data to array of object
 	    Luggage luggageArray[] = responseLuggage.getBody();
 
 	    // Parse an array to a list object
 	    List<Luggage> luggageList = Arrays.asList(luggageArray);
 
-
+	 // Get a passenger from the web service
 	    RestTemplate restTemplatePassenger = new RestTemplate();
 	    ResponseEntity<Passenger[]> responsePassenger =
 	            restTemplatePassenger.getForEntity("http://localhost:8080/projectapp/api/passengers", Passenger[].class);
 
+	 // Parse JSON data to array of object
 	    Passenger passengerArray[] = responsePassenger.getBody();
 
 	    // Parse an array to a list object
@@ -153,10 +156,9 @@ public class Checkpoint1MenuController {
 	}
 
 	/**
-	 * This method deletes an checkpoint 
+	 * This is to request checkpoint 1
+	 * This method deletes an checkpoint 1
 	 * 
-	 * @param CheckpointID
-	 * @return
 	 */
 	@RequestMapping("checkpoint1/delete/{Checkpoint1Id}")
 	public String deleteCheckpoint1(@PathVariable int Checkpoint1Id)

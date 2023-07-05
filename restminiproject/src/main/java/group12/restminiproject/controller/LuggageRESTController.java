@@ -19,20 +19,23 @@ import group12.restminiproject.repository.LuggageRepository;
 
 /*
  * This REST Controller request REST web service in PROVIDER site
+ * This is for Luggage Rest Controller
  * 
  * @Author Nur Irdina Izzati Binti Khairuzaman
  * 
  */
-
 @RestController
 @RequestMapping("/api/luggages")
-
 public class LuggageRESTController {
   
   @Autowired
   private LuggageRepository luggageRepository;
   
-  // delete flight based on Id
+  /**
+	 * This is to delete luggage by id
+	 * This method deletes luggage based on id
+	 *
+	 */
   @DeleteMapping("{luggageId}")
   public ResponseEntity<HttpStatus> deleteLuggage(@PathVariable long luggageId) {
       luggageRepository.deleteById(luggageId);
@@ -40,7 +43,12 @@ public class LuggageRESTController {
   }
 
 
-  // retrieve all order types detail
+  /**
+	 * This is to get luggage details
+	 * This method retrieves all luggage details
+	 *
+	 *@return A list of luggage details
+	 */
   @GetMapping
   public List<Luggage> getLuggage()
   {
@@ -48,7 +56,13 @@ public class LuggageRESTController {
     
   }
   
-  // retrieve product detail based on product ID
+  /**
+	 * This is to get the luggage details by id
+	 * This method retrieves luggage details based on id
+	 * 
+	 * @param luggageID
+	 * @return A list of luggage details by id
+	 */
   @GetMapping("{luggageId}")
   public Luggage getLuggage(@PathVariable long luggageId)
   {
@@ -56,14 +70,22 @@ public class LuggageRESTController {
     return luggage;
   }
 
-  // insert records for order type
+  /**
+   * This is to post luggage details
+   * This method insert new luggage details
+   * 
+   */
   @PostMapping
   public Luggage insertLuggage(@RequestBody Luggage luggage)
   {
     return luggageRepository.save(luggage);
   }
 
-  // update records for order type
+  /**
+   * This is to put luggage details
+   * This method update luggage details
+   * 
+   */
   @PutMapping
   public Luggage updateLuggage (@RequestBody Luggage luggage)
   {

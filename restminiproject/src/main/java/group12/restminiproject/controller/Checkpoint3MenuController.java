@@ -17,11 +17,12 @@ import org.springframework.web.client.RestTemplate;
 import group12.restminiproject.model.Checkpoint3;
 
 
-/**
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Checkpoint 3 Menu Controller
  * 
+ * @Author Shaufy Yana Ezani
  * 
- * @author Shaufy Yana Ezani
- *
  */
 @Controller
 public class Checkpoint3MenuController {
@@ -129,7 +130,8 @@ public class Checkpoint3MenuController {
 	}
 	
 	/**
-	 * This method function is to delete checkpoint
+	 * This is to request checkpoint 3
+	 * This method deletes an checkpoint 3
 	 * 
 	 * @param checkpoint3Id
 	 * @return

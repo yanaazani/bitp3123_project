@@ -17,11 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 import group12.restminiproject.model.Passenger;
 import group12.restminiproject.repository.PassengerRepository;
 
-/**
+/*
  * This REST Controller request REST web service in PROVIDER site
+ * This is for Passenger Rest Controller
  * 
- * @author Nur Irdina Izzati
- *
+ * @Author Nur Irdina Izzati Binti Khairuzaman
+ * 
  */
 @RestController
 @RequestMapping("/api/passengers")
@@ -30,14 +31,23 @@ public class PassengerRESTController {
 	@Autowired
 	private PassengerRepository passengerRepository;
 	
-	// retrieve all passenger information detail
+	/**
+	 * This method retrieves all luggage details
+	 *
+	 *@return A list of passsenger details
+	 */
 	@GetMapping
 	public List<Passenger> getPassenger()
 	{
 		return passengerRepository.findAll();
 	}
 	
-	// retrieve checkpoint detail based on passenger Id
+	/**
+	 * This method retrieves luggage details based on id
+	 *
+	 *@param passengerID
+	 *@return A list of passenger details by id
+	 */
 	@GetMapping ("{passengerId}")
 	public Passenger getPassenger(@PathVariable long passengerId )
 	{
@@ -46,21 +56,33 @@ public class PassengerRESTController {
 		return passenger;
 	}
 	
-	// insert passenger information
+	/**
+	 * This is to post passenger details
+	 * This method add new passenger 
+	 *
+	 */
 	@PostMapping
 	public Passenger insertPassenger (@RequestBody Passenger passenger)
 	{
 		return passengerRepository.save(passenger);
 	}
 	
-	// Update passenger information
+	/**
+	 * This is to put passenger details
+	 * This method edit passenger details
+	 *
+	 */
 	@PutMapping
 	public Passenger updatePassenger (@RequestBody Passenger passenger)
 	{
 		return passengerRepository.save(passenger);
 	}
 	
-	// delete passenger information based on passenger Id
+	/**
+	 * This is to delete passenger details
+	 * This method deletes passenger based on id
+	 *
+	 */
 	@DeleteMapping("{passengerId}")
 	public ResponseEntity<HttpStatus> deleteFlight(@PathVariable long passengerId)
 	{

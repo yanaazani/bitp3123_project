@@ -19,10 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 import group12.restminiproject.model.Checkpoint2;
 import group12.restminiproject.repository.Checkpoint2Repository;
 
-/**
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Checkpoint 2 Rest Controller
  * 
- * @author Shaufy Yana Ezani
- *
+ * @Author Shaufy Yana Ezani
+ * 
  */
 @RestController
 @RequestMapping("/api/checkpoint2")
@@ -31,7 +33,13 @@ public class Checkpoint2RESTController {
 	@Autowired
 	private Checkpoint2Repository checkpoint2Repository;
 	
-	// retrieve checkpoint detail based on checkpoint 2 ID
+	/**
+	 * This is to get checkpoint 2
+	 * This method retrieve checkpoint detail based on checkpoint 2 ID
+	 *
+	 * @param Checkpoint2Id
+	 * @return A list of checkpoint 2 details by id
+	 */
 	@GetMapping("{checkpoint2Id}")
 	public Checkpoint2 getCheckpoint2(@PathVariable long checkpoint2Id)
 	{
@@ -39,7 +47,10 @@ public class Checkpoint2RESTController {
 		return Checkpoint2;
 	}
 	
-	// retrieve all checkpoint 2 information detail
+	/**
+	 * This is to get checkpoint 2 details
+	 * This method retrieves checkpoint 2 details
+	 */
 	@GetMapping
 	public List<Checkpoint2> getCheckpoint2()
 	{
@@ -47,7 +58,11 @@ public class Checkpoint2RESTController {
 		
 	}
 	
-	// insert checkpoint 2
+	/**
+	 * This is to post checkpoint 2
+	 * This method add new checkpoint 2
+	 *
+	 */
 	@PostMapping
 	public Checkpoint2 insertCheckpoint2(@RequestBody Checkpoint2 checkpoint2)
 	{
@@ -58,13 +73,21 @@ public class Checkpoint2RESTController {
 		return checkpoint2Repository.save(checkpoint2);
 	}
 				
-	// Update checkpoint 2
+	/**
+	 * This is to put checkpoint 2 
+	 * This method update checkpoint 2 details
+	 *
+	 */
 	@PutMapping()
 	public Checkpoint2 updateCheckpoint2(@RequestBody Checkpoint2 checkpoint2) {
 		return checkpoint2Repository.save(checkpoint2);
 	}
 				
-	// delete checkpoint 2
+	/**
+	 * This is to delete checkpoint 2 
+	 * This method deletes checkpoint 2 based on id
+	 *
+	 */
 	@DeleteMapping("{checkpoint2Id}")
 	public ResponseEntity<HttpStatus> deleteCheckpoint2(@PathVariable long checkpoint2Id){
 		checkpoint2Repository.deleteById(checkpoint2Id);

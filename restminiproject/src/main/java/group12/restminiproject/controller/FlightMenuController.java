@@ -16,21 +16,24 @@ import org.springframework.web.client.RestTemplate;
 
 import group12.restminiproject.model.Flight;
 
-/**
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Flight Menu Controller
  * 
- * @author Nur Irdina Izzati 
- *
+ * @Author Nur Irdina Izzati Binti Khairuzaman
+ * 
  */
 @Controller 
 public class FlightMenuController {
 
 	private String defaultURI = "http://localhost:8080/projectapp/api/flights";
 	
+
 	/**
-	 * This method is to display a list of flight 
+	 * This is to get the flight 
+	 * This method display flight details
 	 * 
-	 * @param model
-	 * @return checkpoint 
+	 * @return A list of flight details
 	 */
 	@GetMapping("/flight/list")
 	public String getFlight(Model model) {
@@ -55,10 +58,9 @@ public class FlightMenuController {
 	}
 	
 	/**
-	 * This method wil update or add a flight
+	 * This is to request the flight details
+	 * This method updates flight details
 	 * 
-	 * @param checkpoint2
-	 * @return
 	 */
 	@RequestMapping("/flight/save")
 	public String updateFlight (@ModelAttribute Flight flight)
@@ -90,10 +92,10 @@ public class FlightMenuController {
 	}
 	
 	/**
-	 *  This method is to get flight information based on flight Id
-	 * @param flightId
-	 * @param model
-	 * @return
+	 * This is to get the flight details
+	 * This method add new flight 
+	 * 
+	 * @return A list of flight details
 	 */
 	@GetMapping("/flight/{flightId}")
 	public String getFlight (@PathVariable Integer flightId, Model model)
@@ -123,10 +125,10 @@ public class FlightMenuController {
 	}
 	
 	/**
-	 * This method deletes an flight
+	 * This is to request the flight details by id
+	 * This method deletes flight details based on id
 	 * 
-	 * @param passengerID
-	 * @return
+	 * @param flightID
 	 */
 	@RequestMapping("/flight/delete/{flightId}")
 	public String deleteFlight(@PathVariable String flightId)

@@ -12,8 +12,8 @@ import org.springframework.web.client.RestTemplate;
 import group12.restminiproject.model.Airport;
 
 /**
- * 
- * @author Nur Irdina Izzati
+ * This is for Airport Menu Controller
+ * @author Nur Irdina Izzati Binti Khairuzaman
  *
  */
 
@@ -22,10 +22,10 @@ public class AirportMenuController {
 
 
 	/**
-	 * This method is to display a list of flights 
+	 * This is to get the details of airport  
+	 * This method display airport details
 	 * 
-	 * @param model
-	 * @return checkpoint 
+	 * @return A list of airport details
 	 */
 	@GetMapping("/airport/list")
 	public String getAirports (Model model)
@@ -39,7 +39,6 @@ public class AirportMenuController {
 		
 		// Parse JSON data to array of object
 		Airport airports[] = response.getBody();
-		
 		
 		// Parse an array to a list object
 		List<Airport> airportList = Arrays.asList(airports);

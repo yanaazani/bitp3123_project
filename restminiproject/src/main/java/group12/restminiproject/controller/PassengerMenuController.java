@@ -17,10 +17,12 @@ import org.springframework.web.client.RestTemplate;
 import group12.restminiproject.model.Flight;
 import group12.restminiproject.model.Passenger;
 
-/**
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Passenger Menu Controller
  * 
- * @author Nur Irdina Izzati
- *
+ * @Author Nur Irdina Izzati Binti Khairuzaman
+ * 
  */
 @Controller
 public class PassengerMenuController {
@@ -28,10 +30,10 @@ public class PassengerMenuController {
 	private String defaultURI = "http://localhost:8080/projectapp/api/passengers";
 	
 	/**
-	 * This method is to display a list of passenger
+	 * This is to get the passenger 
+	 * This method display passenger details
 	 * 
-	 * @param model
-	 * @return
+	 * @return A list of passenger details
 	 */
 	@GetMapping("/passenger/list")
 	public String getPassengers (Model model)
@@ -58,10 +60,9 @@ public class PassengerMenuController {
 	}
 	
 	/**
-	 * This method wil update or add an passenger
+	 * This is to request the passenger details
+	 * This method update passenger details
 	 * 
-	 * @param passenger
-	 * @return
 	 */
 	@RequestMapping ("/passenger/save")
 	public String updatePassenger (@ModelAttribute Passenger passenger) {		
@@ -95,11 +96,10 @@ public class PassengerMenuController {
 		}
 	
 	/**
-	 * This method is to get passenger information based on passenger Id
+	 * This is to get the passenger by id
+	 * This method add new passenger details
 	 * 
-	 * @param passengerId
-	 * @param model
-	 * @return
+	 * @return A list of new passenger details 
 	 */
 	@GetMapping("/passenger/{passengerId}")
 	public String getPassenger (@PathVariable int passengerId, Model model) {
@@ -139,10 +139,10 @@ public class PassengerMenuController {
 	}
 	
 	/**
-	 * This method deletes an passenger
+	 * This is to request passenger details by id
+	 * This method deletes an passenger details based on id
 	 * 
 	 * @param passengerID
-	 * @return
 	 */
 	@RequestMapping("/passenger/delete/{passengerId}")
 	public String deletePassenger(@PathVariable String passengerId)

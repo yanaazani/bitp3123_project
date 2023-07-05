@@ -21,11 +21,11 @@ import group12.restminiproject.repository.FlightRepository;
 
 /*
  * This REST Controller request REST web service in PROVIDER site
+ * This is for Flight Rest Controller
  * 
  * @Author Nur Irdina Izzati Binti Khairuzaman
  * 
  */
-
 @RestController
 @RequestMapping("/api/flights")
 
@@ -34,7 +34,11 @@ public class FlightRESTController {
 	@Autowired
 	private FlightRepository flightRepository;
 	
-	// delete flight based on Id
+	/**
+	 * This is to delete flight by id
+	 * This method deletes flight based on id
+	 *
+	 */
 	@DeleteMapping("{flightId}")
 	public ResponseEntity<HttpStatus> deleteFlight(@PathVariable long flightId)
 	{
@@ -42,7 +46,11 @@ public class FlightRESTController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	// retrieve all order types detail
+	/**
+	 * This is to get flight details
+	 * This method retrieves all flight details
+	 *
+	 */
 	@GetMapping
 	public List<Flight> getFlight()
 	{
@@ -50,7 +58,11 @@ public class FlightRESTController {
 		
 	}
 	
-	// retrieve product detail based on product ID
+	/**
+	 * This is to get flight details by id
+	 * This method retrieves all flight details based on id
+	 *
+	 */
 	@GetMapping("{flightId}")
 	public Flight getFlight(@PathVariable long flightId)
 	{
@@ -58,14 +70,22 @@ public class FlightRESTController {
 		return flight;
 	}
 
-	// insert records for order type
+	/**
+	 * This is to post flight details
+	 * This method insert new flight details
+	 *
+	 */
 	@PostMapping
 	public Flight insertFlight(@RequestBody Flight flight)
 	{
 		return flightRepository.save(flight);
 	}
 
-	// update records for order type
+	/**
+	 * This is to put flight details
+	 * This method update details for  flight
+	 *
+	 */
 	@PutMapping
 	public Flight updateFlight(@RequestBody Flight flight)
 	{

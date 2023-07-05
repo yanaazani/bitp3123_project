@@ -24,11 +24,12 @@ import group12.restminiproject.model.Checkpoint3;
 import group12.restminiproject.repository.Checkpoint3Repository;
 
 
-/**
- *  This REST Controller request REST web service in PROVIDER site
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Checkpoint 3 Rest Controller
  * 
- * @author Shaufy Yana Ezani
- *
+ * @Author Shaufy Yana Ezani
+ * 
  */
 @RestController
 @RequestMapping("/api/checkpoint3")
@@ -39,7 +40,13 @@ public class Checkpoint3RESTController
 			@Autowired
 			private Checkpoint3Repository checkpoint3Repository;
 	
-			// retrieve checkpoint 3 detail based on checkpoint 3 ID
+			/**
+			 * This is to get checkpoint 3
+			 * This method retrieve checkpoint detail based on checkpoint 3 ID
+			 *
+			 * @param Checkpoint3Id
+			 * @return A list of checkpoint 3 details by id
+			 */
 			@GetMapping("{checkpoint3Id}")
 			public Checkpoint3 getCheckpoint3(@PathVariable long checkpoint3Id)
 			{
@@ -47,7 +54,13 @@ public class Checkpoint3RESTController
 				return Checkpoint3;
 			}
 	
-			// retrieve all checkpoint 3 detail
+			/**
+			 * This is to get checkpoint 3 details
+			 * This method retrieves checkpoint 3 details
+			 *
+			 * @param Checkpoint3ID
+			 * @return A list of checkpoint  details by id
+			 */
 			@GetMapping
 			public List<Checkpoint3> getCheckpoint3()
 			{
@@ -55,7 +68,11 @@ public class Checkpoint3RESTController
 				
 			}
 			
-			// insert checkpoint 3
+			/**
+			 * This is to post checkpoint 3 
+			 * This method add new checkpoint 3
+			 *
+			 */
 			@PostMapping
 			public Checkpoint3 insertCheckpoint(@RequestBody Checkpoint3 checkpoint3)
 			{
@@ -66,13 +83,21 @@ public class Checkpoint3RESTController
 				return checkpoint3Repository.save(checkpoint3);
 			}
 			
-			// Update checkpoint 3 
+			/**
+			 * This is to put checkpoint 3
+			 * This method update checkpoint 3 details
+			 *
+			 */
 			@PutMapping()
 			public Checkpoint3 updateCheckpoint3(@RequestBody Checkpoint3 checkpoint3) {
 				return checkpoint3Repository.save(checkpoint3);
 			}
 			
-			// delete checkpoint 3 
+			/**
+			 * This is to delete checkpoint 3 
+			 * This method deletes checkpoint 3 based on id
+			 *
+			 */
 			@DeleteMapping("{checkpoint3Id}")
 			public ResponseEntity<HttpStatus> deleteCheckpoint3(@PathVariable long checkpoint3Id){
 				checkpoint3Repository.deleteById(checkpoint3Id);

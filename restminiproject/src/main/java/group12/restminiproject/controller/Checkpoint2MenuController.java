@@ -16,10 +16,12 @@ import org.springframework.web.client.RestTemplate;
 
 import group12.restminiproject.model.Checkpoint2;
 
-/**
+/*
+ * This REST Controller request REST web service in PROVIDER site
+ * This is for Checkpoint 2 Menu Controller
  * 
- * @author Shaufy Yana Ezani
- *
+ * @Author Shaufy Yana Ezani
+ * 
  */
 @Controller
 public class Checkpoint2MenuController {
@@ -127,7 +129,8 @@ private String defaultURI = "http://localhost:8080/projectapp/api/checkpoint2";
 	}
 	
 	/**
-	 * This method function is to delete checkpoint
+	 * This is to request checkpoint 2
+	 * This method function is to delete checkpoint 2
 	 * 
 	 * @param checkpoint2Id
 	 * @return
