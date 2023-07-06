@@ -56,8 +56,7 @@
             <th scope="col">Email</th>
             <th scope="col">Telephone Number</th>
             <th scope="col">Gender</th>
-            <th scope="col">Flight Id</th>
-            <th scope="col">Action</th>
+            <th scope="col">Flight Id</th>   
           </tr>
         </thead>
         <tbody>
@@ -71,16 +70,16 @@
 
             <td>
               <!-- A link to edit an passenger -->
-              <a th:href="@{'/passenger/' + ${passenger.passengerId}}" 
+              <!--<a th:href="@{'/passenger/' + ${passenger.passengerId}}" 
               	title="Edit this passenger"
                 class="fa-regular fa-pen-to-square icon-dark"></a>
-              &nbsp;>
+              &nbsp;> -->
               
               <!-- A link to delete an passenger -->
-              <a th:href="@{'/passenger/delete/' + ${passenger.passengerId}}" 
+              <!--<a th:href="@{'/passenger/delete/' + ${passenger.passengerId}}" 
               th:passengerName="${passenger.Name}" id="btnDelete"
                 title="Delete this passenger" 
-                class="fa-regular fa-trash-can icon-dark btn-delete"></a> 
+                class="fa-regular fa-trash-can icon-dark btn-delete"></a> -->
 
             </td> 
           </tr>

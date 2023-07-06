@@ -13,30 +13,31 @@ import jakarta.persistence.Table;
 @Table(name = "luggage")
 public class Luggage {
 
-  //Primary Key
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "LuggageId")
-    private int luggageId;
-    
+	//Primary Key
 
-    @ManyToOne
-    @JoinColumn(name = "PassengerId")
-    private Passenger passenger;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "LuggageId")
+	private int luggageId;
 
-  public int getLuggageId() {
-    return luggageId;
-  }
 
-  public void setLuggageId(int luggageId) {
-    this.luggageId = luggageId;
-  }
+	@ManyToOne
+	@JoinColumn(name = "PassengerId")
+	private Passenger passenger;
 
-  public Passenger getPassenger() {
-    return passenger;
-  }
+	public int getLuggageId() {
+		return luggageId;
+	}
 
-  public void setPassenger(Passenger passenger) {
-    this.passenger = passenger;
-  }
+	public void setLuggageId(int luggageId) {
+		this.luggageId = luggageId;
+	}
+
+	public Passenger getPassenger() {
+		return passenger;
+	}
+
+	public void setPassenger(Passenger passenger) {
+		this.passenger = passenger;
+	}
 }

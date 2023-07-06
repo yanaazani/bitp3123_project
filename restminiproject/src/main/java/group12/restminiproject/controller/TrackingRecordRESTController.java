@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import group12.restminiproject.model.TrackingRecord;
 import group12.restminiproject.repository.TrackingRecordRepository;
 
@@ -31,6 +30,20 @@ public class TrackingRecordRESTController {
 			return trackingRecordRepository.findAll();
 			
 		}		
+		
+		/**
+		 * This method retrieves tracking record details based on id
+		 *
+		 *@param passengerID
+		 *@return A list of passenger details by id
+		 */
+		@GetMapping ("{trackingRecordId}")
+		public TrackingRecord getTrackingRecord(@PathVariable long trackingRecordId )
+		{
+			TrackingRecord trackingRecord = trackingRecordRepository.findById(trackingRecordId).get();
+			
+			return trackingRecord;
+		}
 		
 		// Update Tracking Record
 		@PutMapping()

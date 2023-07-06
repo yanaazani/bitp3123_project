@@ -56,7 +56,7 @@
             <th scope="col">Time</th>
             <th scope="col">Luggage ID</th>
             <th scope="col">Passenger ID</th>
-            <th scope="col">Action</th>
+       
           </tr>
         </thead>
         <tbody>
@@ -67,16 +67,17 @@
 		  <td>[[${checkpoint1.getLuggage()?.getLuggageId()}]]</td>
 		  <td>[[${checkpoint1.getPassenger()?.getPassengerId()}]]</td>
 		  <td>
+		  
 		    <!-- A link to edit a checkpoint -->
-		    <a th:href="@{/checkpoint1/{checkpoint1Id}(checkpoint1Id=${checkpoint1.checkpoint1Id})}"
+		    <!--<a th:href="@{/checkpoint1/{checkpoint1Id}(checkpoint1Id=${checkpoint1.checkpoint1Id})}"
    title="Edit this checkpoint"
-   class="fa-regular fa-pen-to-square icon-dark"></a>
+   class="fa-regular fa-pen-to-square icon-dark"></a> -->
 
 		    
 		    <!-- A link to delete a checkpoint -->
-		    <a th:href="@{'/checkpoint1/delete/' + ${checkpoint1.getCheckpoint1Id()}}"
+		     <!--<a th:href="@{'/checkpoint1/delete/' + ${checkpoint1.getCheckpoint1Id()}}"
 		      title="Delete this checkpoint" 
-		      class="fa-regular fa-trash-can icon-dark btn-delete"></a>
+		      class="fa-regular fa-trash-can icon-dark btn-delete"></a> -->
 		  </td> 
 
 

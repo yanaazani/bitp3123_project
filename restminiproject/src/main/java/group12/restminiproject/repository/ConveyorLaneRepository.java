@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import group12.restminiproject.model.ConveyorLane;
 
 @Repository
-public interface ConveyorLaneRepository extends JpaRepository<ConveyorLane, Long> {
+public interface ConveyorLaneRepository 
+	extends JpaRepository<ConveyorLane, Long> {
 
 }

@@ -70,9 +70,6 @@
               <th scope="col">Checkpoint 2 ID</th>
               <th scope="col">Checkpoint 3 ID</th>
               <th scope="col">Checkpoint 4 ID</th>
-
-             <th scope="col">Action</th>
-
           </tr>
         </thead>
         <tbody>
@@ -87,16 +84,16 @@
 	       
             <td>
      			  <!-- A link to edit a trackingrecord detail -->
-              <a th:href="@{'/trackingrecord/' + ${trackingrecord.trackingRecordId}}" 
-              	title="Edit"
-                class="fa-regular fa-pen-to-square icon-dark"></a>
-              &nbsp;
+             <!-- <a th:href="@{'/trackingrecord/' + ${trackingrecord.trackingRecordId}}"
+             	title="Edit" 
+                class="fa-regular fa-pen-to-square icon-dark"></a> 
+             &nbsp; -->
               
                   <!-- A link to delete a trackingrecord detail -->
-              <a th:href="@{'/trackingrecord/delete/' + ${trackingrecord.trackingRecordId}}" 
-              th:data-TrackingSheetId="${trackingrecord.trackingRecordId}" id="btnDelete"
-                title="Delete this trackingrecord" 
-                class="fa-regular fa-trash-can icon-dark btn-delete"></a>
+             <!-- <a th:href="@{'/trackingrecord/delete/' + ${trackingrecord.trackingRecordId}}" -->
+             <!-- th:data-TrackingSheetId="${trackingrecord.trackingRecordId}" id="btnDelete"-->
+             <!--   title="Delete this trackingrecord" -->
+             <!-- class="fa-regular fa-trash-can icon-dark btn-delete"></a> -->
 
             </td> 
           </tr>
@@ -141,7 +138,7 @@
 
         trackingRecordId = link.attr("trackingRecordId");
         $("#yesBtn").attr("href", link.attr("href"));
-        $("#confirmText").html("Do you want to delete the  \<strong\>" + trackingRecordId + "\<\/strong\>?");
+        $("#confirmText").html("Delete ?");
         $("#confirmModal").modal();
       });
 

@@ -12,28 +12,28 @@ import jakarta.persistence.Table;
 public class Airport {
 
 	//Primary Key
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "AirportId")
-		private int airportId;
-		
-		@Column(name = "AirportName")
-		private String airportName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "AirportId")
+	private int airportId;
 
-		public int getAirportId() {
-			return airportId;
-		}
+	@Column(name = "AirportName")
+	private String airportName;
 
-		public void setAirportId(int airportId) {
-			this.airportId = airportId;
-		}
+	public int getAirportId() {
+		return airportId;
+	}
 
-		public String getAirportName() {
-			return airportName;
-		}
+	public void setAirportId(int airportId) {
+		this.airportId = airportId;
+	}
 
-		public void setAirportName(String airportName) {
-			this.airportName = airportName;
-		}
+	public String getAirportName() {
+		return airportName;
+	}
+
+	public void setAirportName(String airportName) {
+		this.airportName = airportName;
+	}
 }
 		
